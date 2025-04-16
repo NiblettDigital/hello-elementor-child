@@ -35,12 +35,10 @@ function hello_elementor_child_scripts_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'hello_elementor_child_scripts_styles', 20 );
 
-/**
- * Include Custom Site Options
- */
-if( defined('APP_PATH') && is_dir(APP_PATH) ) {
 
-    ## Site Admin Options
-    if(file_exists(APP_PATH.'/data/config/admin'))
-        include APP_PATH.'/data/config/admin';
-}
+/**
+ * Include Custom Site Theme Options
+ */
+if( defined('APP_PATH') && is_dir(APP_PATH) )
+    if(file_exists(APP_PATH.'/data/config/theme'))
+        include APP_PATH.'/data/config/theme';
